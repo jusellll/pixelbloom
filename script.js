@@ -1,27 +1,15 @@
-document.getElementById('musicToggle').addEventListener('click', function() {
-    const music = document.getElementById('bgMusic');
-    if (music.paused) {
-        music.play();
-        this.querySelector('span').textContent = 'Pause Music';
-    } else {
-        music.pause();
-        this.querySelector('span').textContent = 'Play Music';
-    }
-});
+// Music Toggle (Removed as Spotify Embed handles its own playback)
 
 const hearts = document.querySelectorAll('.heart');
 const heartMessage = document.getElementById('heartMessage');
 
 hearts.forEach(heart => {
     heart.addEventListener('click', function() {
-        heartMessage.textContent = this.getAttribute('data-message');
-    });
-});
-
-document.getElementById('yesBtn').addEventListener('click', function() {
-    alert('Yay! I’m so happy to hear that!');
-});
-
-document.getElementById('noBtn').addEventListener('click', function() {
-    alert('That’s okay! I’ll always cherish our moments.');
-});
+        // Remove 'show' class from previous message if any
+        if (heartMessage.classList.contains('show')) {
+            heartMessage.classList.remove('show');
+            // Wait for animation to finish before changing text and showing again
+            setTimeout(() => {
+                heartMessage.textContent = this.getAttribute('data-message');
+                heartMessage.classList.add('show');
+            }, Login to continue using Login to continue using
